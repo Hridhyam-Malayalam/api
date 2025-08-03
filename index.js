@@ -44,6 +44,26 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 /**
  * @swagger
+ * /:
+ *   get:
+ *     description: Get a welcome message
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: A welcome message
+ *         schema:
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ */
+app.get('/', (req, res) => {
+  res.json({ message: 'hello hridhyam' });
+});
+
+/**
+ * @swagger
  * /send-notification:
  *   post:
  *     description: Send a push notification to a specific topic
